@@ -83,7 +83,7 @@ const Hero = () => {
             </motion.a>
             
             <motion.a
-              href="https://wa.me/yourphonenumber" // Replace with your WhatsApp number
+              href="https://wa.me/8801919011101" // Replace with your WhatsApp number
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-teal-600 text-white font-bold py-3 px-6 rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-green-500/30"
@@ -97,7 +97,7 @@ const Hero = () => {
 
             <div className="flex gap-4">
               <motion.a
-                href="https://github.com/yourusername"
+                href="https://github.com/MdImranHossen01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-2xl"
@@ -106,7 +106,7 @@ const Hero = () => {
                 <FaGithub />
               </motion.a>
               <motion.a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/dev-mdimranhossen/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-2xl"

@@ -1,15 +1,35 @@
 // src/sections/Projects.jsx
 import ProjectCard from '../components/ProjectCard';
-import projImg1 from '../assets/project1.png';
+import projImg1 from '../assets/Pathchakro.png';
+import projImg2 from '../assets/Homa_Room.png';
+import projImg3 from '../assets/Subscription_Box.png';
 import { motion } from 'framer-motion';
 
 const projectsData = [
-  {
-    title: 'E-commerce Website',
-    description: 'A full-featured e-commerce platform with product listings, shopping cart, user authentication, and payment processing. Built with React, Node.js, Express, and MongoDB.',
+   {
+    title: 'Patchakro',
+    description: "Pathchakro is a dynamic, full-stack collaborative study platform built with MongoDB, Express.js, React, and Node.js. The system allows users to manage assignments, while the core feature is a peer-to-peer grading system where students can review and mark each other's work. It includes secure JWT Bearer Token authentication, a rich text editor for detailed descriptions, and an integrated book borrowing system.",
     image: projImg1,
-    liveLink: 'https://your-live-site.com',
-    repoLink: 'https://github.com/your-repo',
+    liveLink: 'https://pathchakro-a6827.web.app',
+    repoLink: 'https://github.com/MdImranHossen01/A11-Pathchakro.git',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
+    featured: true
+  },
+   {
+    title: 'Homa Room',
+    description: "Homa Room is a full-stack web app built with React & Firebase that helps users find compatible roommates through location-based filtering, budget matching, and real-time chat. It includes Firebase Auth (Google/email login), Firestore database for profile storage, and a responsive UI with Tailwind CSS. The app simplifies roommate searches with instant messaging and smart filters, ensuring seamless connections. ",
+    image: projImg2,
+    liveLink: 'https://roommate-finder-5c556.web.app/',
+    repoLink: 'https://github.com/MdImranHossen01/A10-Roomate-Finder',
+    techStack: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
+    featured: true
+  },
+   {
+    title: 'Subscription Box',
+    description: "Subscription Box – A sleek, responsive web application built with React, featuring dynamic content loading, smooth animations, and a modern UI. Designed for optimal performance across devices, it showcases clean code practices and efficient state management.",
+    image: projImg3,
+    liveLink: 'https://stupendous-phoenix-6d34c8.netlify.app/',
+    repoLink: 'https://github.com/MdImranHossen01/subcription-box',
     techStack: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
     featured: true
   },

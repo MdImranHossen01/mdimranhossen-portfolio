@@ -1,4 +1,5 @@
 // src/components/Navbar.jsx
+
 const Navbar = () => {
   const navLinks = [
     { title: 'Home', path: '#home' },
