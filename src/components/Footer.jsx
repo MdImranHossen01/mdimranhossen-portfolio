@@ -8,9 +8,9 @@ const Footer = () => {
 
   // Replace with your actual social media links
   const socialLinks = {
-    github: 'https://github.com/your-username',
-    linkedin: 'https://linkedin.com/in/your-username',
-    facebook: 'https://facebook.com/your-username',
+    github: 'https://github.com/MdImranHossen01',
+    linkedin: 'https://linkedin.com/in/dev-mdimranhossen',
+    facebook: 'https://facebook.com/imranshuvo101',
   };
 
   return (
