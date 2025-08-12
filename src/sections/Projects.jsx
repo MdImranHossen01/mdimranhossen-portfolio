@@ -1,13 +1,23 @@
 // src/sections/Projects.jsx
 import ProjectCard from '../components/ProjectCard';
+import projImg from '../assets/musafir.png';
 import projImg1 from '../assets/Pathchakro.png';
 import projImg2 from '../assets/Homa_Room.png';
 import projImg3 from '../assets/Subscription_Box.png';
 import { motion } from 'framer-motion';
 
 const projectsData = [
-   {
-    title: 'Patchakro',
+  {
+    title: 'Musafir Traveller',
+    description: "Musafir is a comprehensive travel booking platform built with React, Node.js, and MongoDB. It features hotel and room booking functionality with search filters, user authentication, booking management, and admin dashboard. The app includes secure payment processing with Stripe API, responsive design with Tailwind CSS, and real-time data management with MongoDB.",
+    image: projImg,
+    liveLink: 'https://musafir-traveller.web.app',
+    repoLink: 'https://github.com/MdImranHossen01/A12-Musafir-Traveller',
+    techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe API', 'Firebase Auth', 'Tailwind CSS'],
+    featured: true
+  },
+  {
+    title: 'Pathchakro',
     description: "Pathchakro is a dynamic, full-stack collaborative study platform built with MongoDB, Express.js, React, and Node.js. The system allows users to manage assignments, while the core feature is a peer-to-peer grading system where students can review and mark each other's work. It includes secure JWT Bearer Token authentication, a rich text editor for detailed descriptions, and an integrated book borrowing system.",
     image: projImg1,
     liveLink: 'https://pathchakro-a6827.web.app',
@@ -15,25 +25,16 @@ const projectsData = [
     techStack: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
     featured: true
   },
-   {
+  {
     title: 'Homa Room',
-    description: "Homa Room is a full-stack web app built with React & Firebase that helps users find compatible roommates through location-based filtering, budget matching, and real-time chat. It includes Firebase Auth (Google/email login), Firestore database for profile storage, and a responsive UI with Tailwind CSS. The app simplifies roommate searches with instant messaging and smart filters, ensuring seamless connections. ",
+    description: "Homa Room is a full-stack web app built with React & Firebase that helps users find compatible roommates through location-based filtering, budget matching, and real-time chat. It includes Firebase Auth (Google/email login), Firestore database for profile storage, and a responsive UI with Tailwind CSS. The app simplifies roommate searches with instant messaging and smart filters, ensuring seamless connections.",
     image: projImg2,
     liveLink: 'https://roommate-finder-5c556.web.app/',
     repoLink: 'https://github.com/MdImranHossen01/A10-Roomate-Finder',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
+    techStack: ['React', 'Firebase', 'Tailwind CSS'],
     featured: true
-  },
-   {
-    title: 'Subscription Box',
-    description: "Subscription Box – A sleek, responsive web application built with React, featuring dynamic content loading, smooth animations, and a modern UI. Designed for optimal performance across devices, it showcases clean code practices and efficient state management.",
-    image: projImg3,
-    liveLink: 'https://stupendous-phoenix-6d34c8.netlify.app/',
-    repoLink: 'https://github.com/MdImranHossen01/subcription-box',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
-    featured: true
-  },
-  // Add more projects here
+  }
+
 ];
 
 const Projects = () => {
