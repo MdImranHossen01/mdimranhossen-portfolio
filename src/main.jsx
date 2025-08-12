@@ -1,11 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
-import './index.css';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+import MusafirTraveller from "./pages/MusafirTraveller";
+import Pathchakro from "./pages/Pathchakro";
+import HomaRoom from "./pages/HomaRoom";
+import App from "./App.jsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      { path: "musafir-traveller", element: <MusafirTraveller /> },
+      { path: "pathchakro", element: <Pathchakro /> },
+      { path: "homa-room", element: <HomaRoom /> },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
 );
