@@ -56,7 +56,7 @@ const Hero = () => {
             className="text-2xl mt-4 text-cyan-400 font-medium"
             variants={itemVariants}
           >
-            MERN Stack Developer
+            Full Stack Developer
           </motion.p>
 
           <motion.p
