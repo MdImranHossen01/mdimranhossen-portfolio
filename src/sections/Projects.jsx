@@ -11,9 +11,10 @@ const projectsData = [
     title: 'Musafir Traveller',
     description: "Musafir is a comprehensive travel booking platform built with React, Node.js, and MongoDB. It features hotel and room booking functionality with search filters, user authentication, booking management, and admin dashboard. The app includes secure payment processing with Stripe API, responsive design with Tailwind CSS, and real-time data management with MongoDB.",
     image: projImg,
-    liveLink: 'https://musafir-traveller.web.app',
+    liveLink: 'https://marvelous-gaufre-bd3a39.netlify.app',
     repoLink: 'https://github.com/MdImranHossen01/A12-Musafir-Traveller',
     techStack: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe API', 'Firebase Auth', 'Tailwind CSS'],
+    detailsLink: '/project/musafir',
     featured: true
   },
   {
@@ -23,15 +24,17 @@ const projectsData = [
     liveLink: 'https://pathchakro-a6827.web.app',
     repoLink: 'https://github.com/MdImranHossen01/A11-Pathchakro.git',
     techStack: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
+    detailsLink: '/project/pathchakro',
     featured: true
   },
   {
     title: 'Homa Room',
     description: "Homa Room is a full-stack web app built with React & Firebase that helps users find compatible roommates through location-based filtering, budget matching, and real-time chat. It includes Firebase Auth (Google/email login), Firestore database for profile storage, and a responsive UI with Tailwind CSS. The app simplifies roommate searches with instant messaging and smart filters, ensuring seamless connections.",
     image: projImg2,
-    liveLink: 'https://roommate-finder-5c556.web.app/',
+    liveLink: 'https://roommate-finder-5c556.web.app',
     repoLink: 'https://github.com/MdImranHossen01/A10-Roomate-Finder',
     techStack: ['React', 'Firebase', 'Tailwind CSS'],
+    detailsLink: '/project/homa-room',
     featured: true
   }
 

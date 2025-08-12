@@ -76,7 +76,18 @@ const ProjectCard = ({ project }) => {
             whileTap={{ scale: 0.95 }}
           >
             <FiGithub className="text-base" />
-            <span>Source Code</span>
+            <span>Source</span>
+          </motion.a>
+          <motion.a 
+            href={project.detailsLink} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center gap-1.5 text-sm px-3 py-2 bg-gray-700/50 hover:bg-gray-700/70 rounded-md transition-colors text-gray-300"
+            whileHover={{ x: 2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            
+            <span>View Details</span>
           </motion.a>
         </div>
       </div>
