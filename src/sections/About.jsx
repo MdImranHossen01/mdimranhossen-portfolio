@@ -1,61 +1,79 @@
-// src/sections/About.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
+import { FaReact, FaServer, FaUsers } from 'react-icons/fa';
+import Lottie from "lottie-react"; // ✨ 1. Import the Lottie component
+import devIllustration from '../assets/developerskills.json'; // Your Lottie JSON file
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-800 text-white">
-      <div className="container mx-auto px-6 max-w-3xl">
-        <h2 className="text-4xl font-bold text-center mb-12">
+    <section id="about" className="py-20 bg-gray-800 text-white overflow-hidden">
+      <div className="container mx-auto px-6">
+        <motion.h2 
+          className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           About Me
-        </h2>
-        
-        <div className="space-y-6">
-          <h3 className="text-3xl font-semibold text-center mb-6 text-cyan-400">
-            A Passionate Developer from Bangladesh
-          </h3>
+        </motion.h2>
+
+        <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
           
-          {/* Programming Journey */}
-          <p className="text-lg text-gray-300 leading-relaxed">
-            I began my programming journey in January 2025, starting with the fundamentals of HTML, CSS, and JavaScript. 
-            Though relatively new to the field, I've immersed myself completely in learning modern web development. 
-            Each day brings new challenges and opportunities to grow, and I'm excited by how quickly I'm progressing 
-            in understanding the MERN stack and building functional applications.
-          </p>
-          
-          {/* Type of Work Enjoyed */}
-          <p className="text-lg text-gray-300 leading-relaxed">
-            I'm particularly drawn to frontend development where I can combine technical skills with creative design. 
-            Building responsive, user-friendly interfaces with React gives me great satisfaction. 
-            I also enjoy the logical problem-solving aspects of backend development with Node.js and Express. 
-            Currently, I'm focusing on mastering state management and API integration to create seamless full-stack applications.
-          </p>
-          
-          {/* Hobbies and Interests */}
-          <p className="text-lg text-gray-300 leading-relaxed">
-            When I'm not coding, you'll find me on the sports field - I'm an avid football and cricket player. 
-            I enjoy the teamwork and strategy of football as much as the technical precision of cricket batting. 
-            These sports have taught me valuable lessons about discipline, practice, and teamwork that I apply to my coding journey. 
-            I also follow international football leagues and never miss a Bangladesh cricket match.
-          </p>
-          
-          {/* Personality Showcase */}
-          <p className="text-lg text-gray-300 leading-relaxed">
-            As a quick learner with strong determination, I approach programming with the same dedication I bring to sports. 
-            Teammates would describe me as energetic, coachable, and always willing to put in extra practice. 
-            I believe in consistent daily progress - whether it's improving my coding skills or my cricket batting technique. 
-            My goal is to combine my passion for technology with my strong work ethic to build meaningful web applications.
-          </p>
-          
-          <div className="text-center mt-10">
-            <a 
-              href="#contact" 
-              className="inline-block bg-cyan-500 text-white font-bold py-3 px-8 rounded-lg
-                         hover:bg-cyan-600 transition-colors duration-300 shadow-lg
-                         transform hover:scale-105"
-            >
-              Get In Touch
-            </a>
-          </div>
+          {/* Left Side: Lottie Animation */}
+          <motion.div 
+            className="md:w-5/12"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            {/* ✨ 2. Replace <img> with the <Lottie> component */}
+            <Lottie 
+              animationData={devIllustration} 
+              loop={true} 
+              className="w-full h-auto"
+            />
+          </motion.div>
+
+          {/* Right Side: Content */}
+          <motion.div 
+            className="md:w-7/12 space-y-8"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          >
+            <p className="text-lg text-gray-300 leading-relaxed">
+              I’m a passionate web developer from Bangladesh, learning and building with the MERN stack since January 2025. I focus on creating responsive, user-friendly interfaces with React and developing efficient backends using Node.js and Express. My goal is to deliver seamless full-stack applications that combine creativity with technical precision.
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed">
+             Outside of coding, I’m an avid football and cricket player. The teamwork, discipline, and persistence I’ve learned from sports directly shape my approach to development—driving me to improve daily, solve problems efficiently, and collaborate effectively.
+            </p>
+
+            {/* Info Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              
+              <div className="bg-gray-900/50 p-6 rounded-lg border border-transparent hover:border-cyan-500 transition-colors duration-300">
+                <FaReact className="text-4xl text-cyan-400 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">Frontend</h4>
+                <p className="text-sm text-gray-400">User-friendly interfaces with React</p>
+              </div>
+
+              <div className="bg-gray-900/50 p-6 rounded-lg border border-transparent hover:border-cyan-500 transition-colors duration-300">
+                <FaServer className="text-4xl text-cyan-400 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">Backend</h4>
+                <p className="text-sm text-gray-400">Robust logic with Node.js & Express</p>
+              </div>
+
+              <div className="bg-gray-900/50 p-6 rounded-lg border border-transparent hover:border-cyan-500 transition-colors duration-300">
+                <FaUsers className="text-4xl text-cyan-400 mx-auto mb-3" />
+                <h4 className="font-semibold text-lg">Philosophy</h4>
+                <p className="text-sm text-gray-400">Discipline & teamwork from sports</p>
+              </div>
+
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

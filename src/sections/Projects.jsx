@@ -3,10 +3,10 @@ import ProjectCard from '../components/ProjectCard';
 import projImg from '../assets/musafir.png';
 import projImg1 from '../assets/Pathchakro.png';
 import projImg2 from '../assets/Homa_Room.png';
-import projImg3 from '../assets/Subscription_Box.png';
 import { motion } from 'framer-motion';
 
 const projectsData = [
+  // ... your project data remains the same
   {
     title: 'Musafir Traveller',
     description: "Musafir is a comprehensive travel booking platform built with React, Node.js, and MongoDB. It features hotel and room booking functionality with search filters, user authentication, booking management, and admin dashboard. The app includes secure payment processing with Stripe API, responsive design with Tailwind CSS, and real-time data management with MongoDB.",
@@ -37,7 +37,6 @@ const projectsData = [
     detailsLink: '/project/homa-room',
     featured: true
   }
-
 ];
 
 const Projects = () => {
@@ -64,7 +63,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-20 bg-gradient-to-b from-gray-900 to-gray-800">
-      <div className="container mx-auto px-6 max-w-5xl">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,18 +79,18 @@ const Projects = () => {
           </p>
         </motion.div>
 
+        {/* ✨ CHANGE IS ON THIS LINE: Replaced "space-y-12" with grid layout classes */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="space-y-12"
+          className="grid grid-cols-1 lg:grid-cols-3 gap-8"
         >
           {projectsData.map((project, index) => (
             <motion.div 
               key={index}
               variants={itemVariants}
-              className="w-full"
             >
               <ProjectCard project={project} />
             </motion.div>

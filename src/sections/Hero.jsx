@@ -1,5 +1,5 @@
 // src/sections/Hero.jsx
-import myImage from "../assets/profile-imran.jpg";
+import myImage from "../assets/profile-imran1.png";
 import resume from "../assets/CV_Imran_2.pdf";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -30,13 +30,16 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 relative overflow-hidden"
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-cyan-500/10 filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-blue-500/10 filter blur-3xl animate-pulse"></div>
       </div>
-
+      
       <div className="container mx-auto flex flex-col md:flex-row items-center px-6 relative z-10">
         {/* Left Side: Text Content */}
         <motion.div
@@ -81,7 +84,7 @@ const Hero = () => {
               <FaDownload className="text-lg" />
               Download Resume
             </motion.a>
-            
+
             <motion.a
               href="https://wa.me/8801919011101" // Replace with your WhatsApp number
               target="_blank"

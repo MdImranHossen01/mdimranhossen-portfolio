@@ -4,20 +4,21 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi';
 
 const ProjectCard = ({ project }) => {
   return (
+    // ✨ CHANGE IS ON THIS LINE: Removed "max-w-3xl mx-auto" and added "h-full"
     <motion.div 
-      className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col lg:flex-row w-full max-w-4xl mx-auto border border-gray-700"
+      className="bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col w-full h-full border border-gray-700"
       whileHover={{ y: -3 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
     >
-      {/* Image on left - full width on mobile, fixed width on desktop */}
-      <div className="lg:w-2/5 relative">
+      {/* Image on top */}
+      <div className="relative">
         <img 
           src={project.image} 
           alt={project.title} 
-          className="w-full h-64 lg:h-full object-cover"
+          className="w-full h-64 object-cover"
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
@@ -25,8 +26,8 @@ const ProjectCard = ({ project }) => {
         </div>
       </div>
 
-      {/* Content on right */}
-      <div className="p-6 lg:w-3/5 flex flex-col">
+      {/* Content below */}
+      <div className="p-6 flex flex-col flex-grow">
         <div className="flex-grow">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-xl font-bold text-white">{project.title}</h3>
@@ -55,7 +56,7 @@ const ProjectCard = ({ project }) => {
         </div>
 
         {/* Links */}
-        <div className="flex space-x-3">
+        <div className="flex space-x-3 mt-auto">
           <motion.a 
             href={project.liveLink} 
             target="_blank" 
@@ -86,7 +87,6 @@ const ProjectCard = ({ project }) => {
             whileHover={{ x: 2 }}
             whileTap={{ scale: 0.95 }}
           >
-            
             <span>View Details</span>
           </motion.a>
         </div>
