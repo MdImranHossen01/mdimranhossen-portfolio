@@ -3,6 +3,7 @@ import myImage from "../assets/profile-imran1.png";
 import resume from "../assets/CV_Imran_2.pdf";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { TypeAnimation } from 'react-type-animation';
 
 const Hero = () => {
   const containerVariants = {
@@ -40,30 +41,45 @@ const Hero = () => {
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-blue-500/10 filter blur-3xl animate-pulse"></div>
       </div>
       
-      <div className="container mx-auto flex flex-col md:flex-row items-center px-6 relative z-10">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center px-4 sm:px-6 lg:px-8 relative z-10 py-12">
         {/* Left Side: Text Content */}
         <motion.div
-          className="md:w-1/2 text-center md:text-left"
+          className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0"
           initial="hidden"
           animate="visible"
           variants={containerVariants}
         >
           <motion.h1
-            className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-4"
             variants={itemVariants}
           >
             Md Imran Hossen
           </motion.h1>
 
-          <motion.p
-            className="text-2xl mt-4 text-cyan-400 font-medium"
+          <motion.div
+            className="text-2xl mt-4 text-cyan-400 font-medium h-10"
             variants={itemVariants}
           >
-            Full Stack Developer
-          </motion.p>
+            <TypeAnimation
+              sequence={[
+                'Full Stack Developer',
+                1500,
+                'Web Designer',
+                1500,
+                'Frontend Specialist',
+                1500,
+                'Backend Engineer',
+                1500
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              style={{ display: 'inline-block' }}
+            />
+          </motion.div>
 
           <motion.p
-            className="mt-6 text-lg text-gray-300 max-w-lg"
+            className="mt-6 text-lg text-gray-300 max-w-lg mx-auto lg:mx-0"
             variants={itemVariants}
           >
             I craft high-performance web applications with cutting-edge
@@ -71,7 +87,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.div
-            className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start items-center"
+            className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start items-center"
             variants={itemVariants}
           >
             <motion.a
@@ -86,7 +102,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href="https://wa.me/8801919011101" // Replace with your WhatsApp number
+              href="https://wa.me/8801919011101"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-teal-600 text-white font-bold py-3 px-6 rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-green-500/30"
@@ -121,19 +137,24 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Side: Image */}
+        {/* Right Side: Image - Improved Responsiveness */}
         <motion.div
-          className="md:w-1/2 mt-12 md:mt-0 flex justify-center"
+          className="lg:w-1/2 flex justify-center"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
           <div className="relative">
-            <img
-              src={myImage}
-              alt="Md Imran Hossen"
-              className="rounded-full w-64 h-64 md:w-96 md:h-96 object-cover shadow-2xl shadow-cyan-500/20"
-            />
+            <div className="relative rounded-full p-1 bg-gradient-to-r from-cyan-400 to-blue-500">
+              <div className="rounded-full overflow-hidden border-4 border-gray-800">
+                <img
+                  src={myImage}
+                  alt="Md Imran Hossen"
+                  className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover"
+                />
+              </div>
+              <div className="absolute inset-0 rounded-full shadow-lg shadow-cyan-500/30 animate-pulse"></div>
+            </div>
           </div>
         </motion.div>
       </div>
