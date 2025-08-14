@@ -3,6 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaBookOpen } from 'react-icons/fa';
 import { IoIosSchool } from 'react-icons/io';
+import Lottie from "lottie-react";
+import educationAnimation from '../assets/ExamPreparation.json';
 
 const educationData = [
   {
@@ -34,10 +36,10 @@ const educationData = [
 const Education = () => {
   return (
     <section id="education" className="py-24 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 w-full">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-6">
         {/* Section Heading */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -56,68 +58,77 @@ const Education = () => {
           </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative w-full">
-          {/* Decorative elements */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="h-full w-0.5 bg-gray-800/50"></div>
-          </div>
+        {/* Content Layout */}
+        <div className="flex flex-col lg:flex-row gap-12 items-start">
+          {/* Left Side: Lottie Animation */}
+          <motion.div 
+            className="lg:w-1/2"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <Lottie 
+              animationData={educationAnimation} 
+              loop={true}
+              className="w-full max-w-lg mx-auto"
+            />
+          </motion.div>
 
-          <div className="w-full max-w-5xl mx-auto">
-            {educationData.map((edu, index) => (
-              <motion.div 
-                key={index}
-                className="relative mb-16 group w-full"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                {/* Timeline connector */}
-                {index !== educationData.length - 1 && (
-                  <div className="absolute left-8 top-10 h-full w-0.5 bg-gradient-to-b from-cyan-400/30 to-blue-500/30"></div>
-                )}
+          {/* Right Side: Education Timeline */}
+          <div className="lg:w-1/2 w-full">
+            <div className="relative pl-8 sm:pl-12">
+              {/* Timeline line */}
+              <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-cyan-500/20 via-blue-500/40 to-cyan-500/20"></div>
 
-                <div className="flex flex-col sm:flex-row w-full">
-                  {/* Date badge - moved further left to prevent overlap */}
-                  <div className="w-40 flex-shrink-0 mb-4 sm:mb-0 pl-2">
-                    <div className="px-4 py-2 bg-gray-800/80 backdrop-blur-sm rounded-lg border border-gray-700 shadow-lg">
-                      <span className="text-cyan-400 font-mono text-sm">{edu.year}</span>
-                    </div>
+              {educationData.map((edu, index) => (
+                <motion.div 
+                  key={index}
+                  className="relative mb-12 group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-0 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center border-4 border-gray-900 shadow-lg shadow-cyan-500/20 z-10">
+                    {edu.icon}
                   </div>
 
                   {/* Education card */}
-                  <div className="flex-1 relative w-full">
-                    {/* Icon - adjusted positioning */}
-                    <div className="absolute -left-2 sm:-left-6 top-1 w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/30 z-10">
-                      {edu.icon}
+                  <div className="bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 shadow-lg transition-all duration-300 hover:border-cyan-400/30 hover:shadow-cyan-500/20 group-hover:scale-[1.01]">
+                    
+                    {/* ✨ CHANGED SECTION START */}
+                    <h3 className="text-xl font-bold text-white mb-1">
+                      <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                        {edu.degree}
+                      </span>
+                    </h3>
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-2">
+                      <p className="text-blue-300 font-medium">{edu.institution}</p>
+                      <span className="text-sm text-cyan-400 bg-gray-900/50 px-3 py-1 rounded-full">
+                        {edu.year}
+                      </span>
                     </div>
+                    {/* ✨ CHANGED SECTION END */}
 
-                    <div className="bg-gray-800/60 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 shadow-lg transition-all duration-300 hover:border-cyan-400/30 hover:shadow-cyan-500/20 group-hover:scale-[1.01] w-full ml-2 sm:ml-0">
-                      <h3 className="text-xl font-bold text-white mb-1 flex items-center">
-                        <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                          {edu.degree}
-                        </span>
-                      </h3>
-                      <p className="text-blue-300 font-medium mb-3">{edu.institution}</p>
-                      <p className="text-gray-300 mb-4">{edu.description}</p>
-                      
-                      <div className="border-t border-gray-700/50 pt-4">
-                        <h4 className="text-sm font-semibold text-cyan-400 mb-2">KEY HIGHLIGHTS</h4>
-                        <ul className="space-y-2">
-                          {edu.highlights.map((item, i) => (
-                            <li key={i} className="flex items-start">
-                              <span className="text-cyan-400 mr-2">•</span>
-                              <span className="text-gray-300 text-sm">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                    <p className="text-gray-300 mb-4">{edu.description}</p>
+                    
+                    <div className="border-t border-gray-700/50 pt-4">
+                      <h4 className="text-sm font-semibold text-cyan-400 mb-2">KEY HIGHLIGHTS</h4>
+                      <ul className="space-y-2">
+                        {edu.highlights.map((item, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="text-cyan-400 mr-2">•</span>
+                            <span className="text-gray-300 text-sm">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
