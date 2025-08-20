@@ -92,7 +92,7 @@ const Hero = () => {
           >
             <motion.a
               href={resume}
-              download="Resume-MdImranHossen.pdf"
+              download="dev-imran-resume.pdf"
               className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-cyan-500/30"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
