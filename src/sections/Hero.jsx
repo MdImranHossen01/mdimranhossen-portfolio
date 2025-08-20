@@ -90,7 +90,7 @@ const Hero = () => {
             className="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start items-center"
             variants={itemVariants}
           >
-            <motion.a
+            <a
               href={resume}
               download="dev-imran-resume.pdf"
               className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-cyan-500/30"
@@ -99,7 +99,7 @@ const Hero = () => {
             >
               <FaDownload className="text-lg" />
               Download Resume
-            </motion.a>
+            </a>
 
             <motion.a
               href="https://wa.me/8801919011101"
