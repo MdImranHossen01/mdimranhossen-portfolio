@@ -1,9 +1,9 @@
 // src/sections/Hero.jsx
 import myImage from "../assets/profile-imran1.png";
-import resume from "../assets/dev-imran-resume.pdf";
+// import resume from "../assets/dev-imran-resume.pdf";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
   const containerVariants = {
@@ -40,7 +40,7 @@ const Hero = () => {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-cyan-500/10 filter blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 rounded-full bg-blue-500/10 filter blur-3xl animate-pulse"></div>
       </div>
-      
+
       <div className="container mx-auto flex flex-col lg:flex-row items-center px-4 sm:px-6 lg:px-8 relative z-10 py-12">
         {/* Left Side: Text Content */}
         <motion.div
@@ -62,19 +62,19 @@ const Hero = () => {
           >
             <TypeAnimation
               sequence={[
-                'Full Stack Developer',
+                "Full Stack Developer",
                 1500,
-                'Web Designer',
+                "Web Designer",
                 1500,
-                'Frontend Specialist',
+                "Frontend Specialist",
                 1500,
-                'Backend Engineer',
-                1500
+                "Backend Engineer",
+                1500,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              style={{ display: 'inline-block' }}
+              style={{ display: "inline-block" }}
             />
           </motion.div>
 
@@ -91,11 +91,9 @@ const Hero = () => {
             variants={itemVariants}
           >
             <a
-              href={resume}
+              href="/dev-imran-resume.pdf"
               download="dev-imran-resume.pdf"
               className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-cyan-500/30"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               <FaDownload className="text-lg" />
               Download Resume
