@@ -1,5 +1,5 @@
 // src/sections/Hero.jsx
-import myImage from "../assets/profile-imran1.png";
+import myImage from "../assets/Md-Imran-Hossen-profile.png";
 // import resume from "../assets/dev-imran-resume.pdf";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
