@@ -1,7 +1,7 @@
 // src/sections/Hero.jsx
 import myImage from "../assets/Md-Imran-Hossen-profile.png";
-// import resume from "../assets/dev-imran-resume.pdf";
-import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp, FaDownload } from "react-icons/fa"; 
+import { FaSquareUpwork } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
@@ -130,6 +130,15 @@ const Hero = () => {
                 whileHover={{ y: -3 }}
               >
                 <FaLinkedin />
+              </motion.a>
+              <motion.a
+                href="https://www.upwork.com/freelancers/mdimranhossen" // Replace with your Upwork profile link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-2xl"
+                whileHover={{ y: -3 }}
+              >
+                <FaSquareUpwork/>
               </motion.a>
             </div>
           </motion.div>

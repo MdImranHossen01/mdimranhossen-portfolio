@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa'; // Import icons
+import { FaSquareUpwork} from 'react-icons/fa6';
 
 const Footer = () => {
   // Automatically gets the current year
@@ -11,6 +12,7 @@ const Footer = () => {
     github: 'https://github.com/MdImranHossen01',
     linkedin: 'https://linkedin.com/in/dev-mdimranhossen',
     facebook: 'https://facebook.com/imranshuvo101',
+    upwork: 'https://www.upwork.com/freelancers/mdimranhossen',
   };
 
   return (
@@ -52,6 +54,17 @@ const Footer = () => {
               className="hover:text-cyan-400 transition-colors duration-300"
             >
               <FaFacebook size={24} />
+            </a>
+            <a 
+              href={socialLinks.upwork} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Upwork"
+              className="hover:text-cyan-400 transition-colors duration-300"
+            >
+              <FaSquareUpwork size={24} />
+              
+
             </a>
           </div>
         </div>
